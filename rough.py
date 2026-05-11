@@ -9,3 +9,6 @@ print(type(my_int))
 a = 'x'
 b = 'y'
 print(a+b) # concatenation
+
+from oops_proj import chatbook
+user_1 = chatbook()
