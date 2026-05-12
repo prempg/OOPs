@@ -6,6 +6,7 @@ class employee:
   wo hai __init__ (constructor)
   '''
   def __init__(self):
+    print(id(self)) # address of the object
     self.id = 123
     self.salary = 500000
     self.designation = 'SDE' 
@@ -17,4 +18,8 @@ class employee:
 sam = employee()
 
 print(sam.id)
+print(id(sam)) # address of the object
 sam.travel('Bangalore')
+
+sam.name = 'Sam' # we can add attributes to the object outside the class as well
+print(sam.name)

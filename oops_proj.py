@@ -1,5 +1,17 @@
 class chatbook:
+
+  __user_id = 0 # static variable
+
   def __init__(self):
+    self.__name = "Default User" 
+    # isko use karneke liye (objName.className__AttributeName)
+    
+    # static variable
+    self.id = chatbook.__user_id
+    chatbook.__user_id += 1
+    # self.user_id = 0
+    # self.user_id+=1
+
     self.username = ''
     self.password =  '' 
     self.loggedin = False 
@@ -8,10 +20,25 @@ class chatbook:
 
 
     # hum chaahte h ki jaise hi user kare toh usko option dekhne lage
-    self.menu() 
+    # self.menu() 
     '''self me object ka reference hai ya address hota h islye hum menu ko call 
     kr pa rahe h kyuki jab bhi object banega toh menu call ho jayega aur user ko 
     options dekhne ko milenge''' 
+
+  @staticmethod # decorator h jo static method ko define karta h
+  def get_id():
+    return chatbook.__user_id
+  
+  @staticmethod # static method me self nahi hota h kyunki 
+  #wo class level pe hota h na ki object level pe
+  def set_id(value):
+    chatbook.__user_id = value
+
+  def get_name(self):
+    return self.__name
+  
+  def set_name(self, value):
+    self.__name = value
 
   def menu(self):
     user_input = input("""Welocome to Chatbook! how would you like to proceed?
